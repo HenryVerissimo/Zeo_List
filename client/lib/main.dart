@@ -11,7 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Color.fromRGBO(64, 123, 255, 1),
+        scaffoldBackgroundColor: Color.fromRGBO(30, 30, 30, 1),
+      ),
       routes: {"/": (context) => LoginPage()},
     );
   }
