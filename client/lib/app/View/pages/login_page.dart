@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
-  final Uri urlGitHub = Uri.parse("https://github.com/HenryVerissimo");
+  final Uri urlGitHub = Uri.parse("https://github.com/HenryVerissimo/Zeo_List");
 
   @override
   Widget build(BuildContext context) {
