@@ -18,7 +18,7 @@ class CustomButtonWidget extends StatelessWidget {
       onPressed: func,
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(
-          Theme.of(context).primaryColor,
+          bgColor,
         ),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
@@ -32,7 +32,6 @@ class CustomButtonWidget extends StatelessWidget {
           fontFamily: "ComicRelief",
           fontWeight: FontWeight.bold,
           color: Colors.white,
-          backgroundColor: bgColor,
         ),
       ),
     );
