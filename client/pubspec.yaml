@@ -65,6 +65,8 @@ flutter:
     - .env
     - "assets/images/lista_ilustracao.svg"
     - "assets/images/create_account_ilustracao.svg"
+    - "assets/images/reset_password_ilustracao.svg"
+    - "assets/icons/github_icon.svg"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
