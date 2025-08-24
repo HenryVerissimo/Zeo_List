@@ -1,4 +1,5 @@
-import 'package:client/app/View/pages/login_page.dart';
+import 'package:client/app/View/pages/login/create_account_page.dart';
+import 'package:client/app/View/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Color.fromRGBO(64, 123, 255, 1),
         scaffoldBackgroundColor: Color.fromRGBO(30, 30, 30, 1),
       ),
-      routes: {"/": (context) => LoginPage()},
+      routes: {"/": (context) => LoginPage(), "/create_account": (context) => CreateAccountPage()},
+      initialRoute: "/",
     );
   }
 }

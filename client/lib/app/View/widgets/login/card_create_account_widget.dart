@@ -3,8 +3,8 @@ import 'package:client/app/View/widgets/login/textbutton_login_widget.dart';
 import 'package:client/app/View/widgets/login/textfield_login_widget.dart';
 import 'package:flutter/material.dart';
 
-class CardLoginWidget extends StatelessWidget {
-  const CardLoginWidget({super.key});
+class CardCreateAccountWidget extends StatelessWidget {
+  const CardCreateAccountWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,11 @@ class CardLoginWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            TextfieldWidgetLogin(text: "Email", obscureText: false),
+            TextfieldWidgetLogin(text: "Nome", obscureText: false),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: TextfieldWidgetLogin(text: "Email", obscureText: true),
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: TextfieldWidgetLogin(text: "Senha", obscureText: true),
@@ -34,7 +38,7 @@ class CardLoginWidget extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 2, bottom: 2),
                 child: CustomButtonWidget(
-                  text: "LOGIN",
+                  text: "CRIAR CONTA",
                   func: () {},
                   bgColor: Theme.of(context).primaryColor,
                 ),
@@ -46,12 +50,11 @@ class CardLoginWidget extends StatelessWidget {
               color: const Color.fromARGB(117, 0, 0, 0),
             ),
             CustomTextbuttonWidget(
-              text: "Não tem uma conta? cadastre-se",
+              text: "Já tem uma conta? Faça login",
               func: () {
-                Navigator.pushReplacementNamed(context, "/create_account");
+                Navigator.pushReplacementNamed(context, "/");
               },
             ),
-            CustomTextbuttonWidget(text: "Esqueci minha senha", func: () {}),
           ],
         ),
       ),
