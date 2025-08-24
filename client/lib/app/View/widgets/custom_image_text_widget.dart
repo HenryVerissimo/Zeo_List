@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CustomLogoProjetoWidget extends StatelessWidget {
-  const CustomLogoProjetoWidget({super.key});
+class CustomImageTextWidget extends StatelessWidget {
+  final String text;
+  final String image;
+
+  const CustomImageTextWidget({super.key, required this.text, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,7 @@ class CustomLogoProjetoWidget extends StatelessWidget {
       children: [
         Center(
           child: Text(
-            "ZEO LIST",
+            text,
             style: TextStyle(
               color: Colors.white,
               fontSize: 32,
@@ -18,7 +21,7 @@ class CustomLogoProjetoWidget extends StatelessWidget {
             ),
           ),
         ),
-        SvgPicture.asset("assets/images/lista_ilustracao.svg", height: 260),
+        SvgPicture.asset(image, height: 260),
       ],
     );
   }
