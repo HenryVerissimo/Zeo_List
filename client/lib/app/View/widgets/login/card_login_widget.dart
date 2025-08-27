@@ -36,7 +36,7 @@ class CardLoginWidget extends StatelessWidget {
                 child: CustomButtonWidget(
                   text: "LOGIN",
                   func: () {
-                    Navigator.pushReplacementNamed(context, "home");
+                    Navigator.pushReplacementNamed(context, "/home");
                   },
                   bgColor: Theme.of(context).primaryColor,
                 ),
