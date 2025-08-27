@@ -1,3 +1,4 @@
+import 'package:client/app/View/pages/home/home_page.dart';
 import 'package:client/app/View/pages/loading/splash_screen.dart';
 import 'package:client/app/View/pages/login/create_account_page.dart';
 import 'package:client/app/View/pages/login/login_page.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         "/create_account": (context) => CreateAccountPage(),
         "/reset_password": (context) => ResetPasswordPage(),
         "/splash_screen": (context) => SplashScreen(),
+        "/home": (context) => HomePage(),
       },
       initialRoute: "/splash_screen",
     );
