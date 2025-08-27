@@ -35,7 +35,9 @@ class CardLoginWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 2, bottom: 2),
                 child: CustomButtonWidget(
                   text: "LOGIN",
-                  func: () {},
+                  func: () {
+                    Navigator.pushReplacementNamed(context, "home");
+                  },
                   bgColor: Theme.of(context).primaryColor,
                 ),
               ),
