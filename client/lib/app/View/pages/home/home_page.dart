@@ -50,13 +50,12 @@ class HomePageState extends State<HomePage> {
         children: [
           AppBarWidget(numberTasks: numberTasks,),
           Expanded(
-            flex: 8,
             child: ListView.builder(
               itemCount: listTasks.length,
               itemBuilder: (context, index) {
                 return TaskCardWidget(task: listTasks[index], setNumberTasks: setNumberOfTasksNotCompleted,);
               },
-            )
+            ),
           ),
         ],
       ),
