@@ -1,10 +1,9 @@
 import 'package:client/app/View/widgets/custom_button_github.dart';
-import 'package:client/app/View/widgets/custom_image_text_widget.dart';
 import 'package:client/app/View/widgets/login/card_create_account_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateAccountPage extends StatelessWidget{
-
   const CreateAccountPage({super.key});
 
   @override
@@ -16,7 +15,21 @@ class CreateAccountPage extends StatelessWidget{
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 100),
-              child: CustomImageTextWidget(text: "ZEO LIST", image: "assets/images/create_account_ilustracao.svg"),
+              child: Column(
+                children: [
+                  Center(
+                    child: Text(
+                      "ZEO LIST",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SvgPicture.asset("assets/images/create_account_ilustracao.svg", height: 260),
+                ],
+              ),
             ),
             CardCreateAccountWidget(),
             Padding(
