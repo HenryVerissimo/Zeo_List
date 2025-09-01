@@ -1,3 +1,4 @@
+import 'package:client/app/View/pages/home/create_task_page.dart';
 import 'package:client/app/View/widgets/home/app_bar_widget.dart';
 import 'package:client/app/View/widgets/home/task_card_widget.dart';
 import 'package:client/app/models/task_model.dart';
@@ -31,20 +32,16 @@ class HomePageState extends State<HomePage> {
     });
   }
 
+  void addNewTask(Task task){
+    setState(() {
+      listTasks.add(task);
+    });
+  }
+
   @override
   Widget build(BuildContext context){
     setNumberOfTasksNotCompleted();
     return Scaffold(
-      floatingActionButton: IconButton(
-        onPressed: (){}, 
-        icon: Icon(Icons.add), 
-        style: ButtonStyle(
-          iconSize: WidgetStateProperty.all(50),
-          iconColor: WidgetStateProperty.all(Colors.black),
-          backgroundColor: WidgetStateProperty.all(Theme.of(context).primaryColor)
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Column(
         children: [
@@ -53,12 +50,30 @@ class HomePageState extends State<HomePage> {
             child: ListView.builder(
               itemCount: listTasks.length,
               itemBuilder: (context, index) {
-                return TaskCardWidget(task: listTasks[index], setNumberTasks: setNumberOfTasksNotCompleted,);
+                return Column(children: [
+                  TaskCardWidget(task: listTasks[index], setNumberTasks: setNumberOfTasksNotCompleted),
+                   index == (listTasks.length - 1) ? SizedBox(height: 80) : SizedBox(),
+                ]); 
               },
             ),
           ),
+          
         ],
       ),
+      floatingActionButton: IconButton(
+        onPressed: (){
+          setState(() {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> CreateTaskPage(addNewTask: addNewTask)));
+          });
+        }, 
+        icon: Icon(Icons.add), 
+        style: ButtonStyle(
+          iconSize: WidgetStateProperty.all(50),
+          iconColor: WidgetStateProperty.all(Colors.black),
+          backgroundColor: WidgetStateProperty.all(Theme.of(context).primaryColor)
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
