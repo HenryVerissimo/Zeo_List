@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class TaskCardWidget extends StatefulWidget{
   final Task task;
   final VoidCallback setNumberTasks;
+  final Function(Task) removeTaskFunc;
 
   const TaskCardWidget({
     super.key,
     required this.task,
-    required this.setNumberTasks
+    required this.setNumberTasks,
+    required this.removeTaskFunc
   });
 
   @override
@@ -134,7 +136,9 @@ class TaskCardWidgetState extends State<TaskCardWidget>{
                         ),
                       ),
                       TextButton(
-                        onPressed: (){}, 
+                        onPressed: (){
+                          widget.removeTaskFunc(widget.task);
+                        }, 
                         child: Text(
                           "DELETAR",
                           style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:client/app/View/widgets/home/app_bar_widget.dart';
 import 'package:client/app/View/widgets/home/task_card_widget.dart';
 import 'package:client/app/models/task_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 
 
@@ -14,12 +15,8 @@ class HomePage extends StatefulWidget{
 }
 
 class HomePageState extends State<HomePage> {
-  List<Task> listTasks = [
-    Task(title: "Minha task", content: "Conteúdo do card", createdIn: "19/02/2012", completed: true), 
-    Task(title: "Minha task", content: "teste", createdIn: "05/08/2024", completed: false),
-    Task(title: "Minha task", content: "teste", createdIn: "22/07/2021", completed: false),
-  ];
-   int numberTasks = 0;
+  List<Task> listTasks = [];
+  int numberTasks = 0;
 
   void setNumberOfTasksNotCompleted(){
     setState(() {
@@ -38,6 +35,12 @@ class HomePageState extends State<HomePage> {
     });
   }
 
+  void removeTask(Task task){
+    setState(() {
+      listTasks.remove(task);
+    });
+  }
+
   @override
   Widget build(BuildContext context){
     setNumberOfTasksNotCompleted();
@@ -46,18 +49,34 @@ class HomePageState extends State<HomePage> {
       body: Column(
         children: [
           AppBarWidget(numberTasks: numberTasks,),
-          Expanded(
-            child: ListView.builder(
-              itemCount: listTasks.length,
-              itemBuilder: (context, index) {
-                return Column(children: [
-                  TaskCardWidget(task: listTasks[index], setNumberTasks: setNumberOfTasksNotCompleted),
-                   index == (listTasks.length - 1) ? SizedBox(height: 80) : SizedBox(),
-                ]); 
-              },
+          listTasks.isNotEmpty
+            ? Expanded(
+              child: ListView.builder(
+                itemCount: listTasks.length,
+                itemBuilder: (context, index) {
+                  return Column(children: [
+                    TaskCardWidget(task: listTasks[index], setNumberTasks: setNumberOfTasksNotCompleted, removeTaskFunc: removeTask),
+                    index == (listTasks.length - 1) ? SizedBox(height: 80) : SizedBox(),
+                  ]); 
+                },
+              ),
+            )
+            : Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset("assets/images/icon_dormindo.svg", height: 70),
+                  Text(
+                    "Sem tarefas no momento",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: "ComicRelief",
+                      color: const Color.fromARGB(60, 255, 255, 255),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          
         ],
       ),
       floatingActionButton: IconButton(

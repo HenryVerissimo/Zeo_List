@@ -73,6 +73,7 @@ flutter:
     - "assets/icons/github_icon.svg"
     - "assets/animations/marketing_strategy_checklist.riv"
     - "assets/icons/user_icon.png"
+    - "assets/images/icon_dormindo.svg"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

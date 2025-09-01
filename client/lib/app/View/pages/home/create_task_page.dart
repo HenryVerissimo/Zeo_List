@@ -137,9 +137,9 @@ class CreateTaskPageState extends State<CreateTaskPage>{
                         DateTime dateNow = DateTime.now();
                         String dateString = "${dateNow.day}/${dateNow.month}/${dateNow.year}";
                         Task newTask = Task(title: titleController.text, content: contentController.text, createdIn: dateString, completed: false);
-                  
+
                         Navigator.pop(context);
-                        widget.addNewTask(newTask);  
+                        widget.addNewTask(newTask);
                       },
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(Colors.blue),
