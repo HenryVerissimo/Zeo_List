@@ -72,6 +72,7 @@ flutter:
     - "assets/images/reset_password_ilustracao.svg"
     - "assets/icons/github_icon.svg"
     - "assets/animations/marketing_strategy_checklist.riv"
+    - "assets/animations/reruled_loading_screen.riv"
     - "assets/icons/user_icon.png"
     - "assets/images/icon_dormindo.svg"
 

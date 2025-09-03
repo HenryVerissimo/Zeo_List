@@ -1,3 +1,4 @@
+import 'package:client/app/View/pages/loading/book_loading.dart';
 import 'package:client/app/View/widgets/custom_button_widget.dart';
 import 'package:client/app/View/widgets/login/textbutton_login_widget.dart';
 import 'package:client/app/View/widgets/login/textfield_login_widget.dart';
@@ -36,7 +37,16 @@ class CardLoginWidget extends StatelessWidget {
                 child: CustomButtonWidget(
                   text: "LOGIN",
                   func: () {
-                    Navigator.pushReplacementNamed(context, "/home");
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BookLoading(
+                          loadFunc: (){},
+                          pageRoute: "/home",
+                          routeStringMode: true,
+                        ),
+                      ),
+                    );
                   },
                   bgColor: Theme.of(context).primaryColor,
                 ),
