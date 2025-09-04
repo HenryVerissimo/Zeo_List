@@ -60,14 +60,12 @@ class _AppBarWidgetState extends State<AppBarWidget>{
                         fontWeight: FontWeight.bold
                       ),
                     ),
+                    
                   ],
                 ),
               ),
             ),
-            Expanded(
-              flex: 2,
-              child: Image.asset("assets/icons/user_icon.png"),
-            ),
+            Image.asset("assets/icons/user_icon.png"),
           ],
         ),
       ),

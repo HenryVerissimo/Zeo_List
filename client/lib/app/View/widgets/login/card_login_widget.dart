@@ -30,27 +30,30 @@ class CardLoginWidget extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20),
               child: TextfieldWidgetLogin(text: "Senha", obscureText: true),
             ),
-            SizedBox(
-              width: 320,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 2, bottom: 2),
-                child: CustomButtonWidget(
-                  text: "LOGIN",
-                  func: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => BookLoading(
-                          loadFunc: (){},
-                          pageRoute: "/home",
-                          routeStringMode: true,
-                        ),
-                      ),
-                    );
-                  },
-                  bgColor: Theme.of(context).primaryColor,
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 2, bottom: 2),
+                    child: CustomButtonWidget(
+                      text: "LOGIN",
+                      func: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BookLoading(
+                              loadFunc: (){},
+                              pageRoute: "/home",
+                              routeStringMode: true,
+                            ),
+                          ),
+                        );
+                      },
+                      bgColor: Theme.of(context).primaryColor,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             Container(
               width: 320,

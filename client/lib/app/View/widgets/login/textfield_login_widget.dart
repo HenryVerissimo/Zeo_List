@@ -16,19 +16,17 @@ class TextfieldWidgetLogin extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(
-              flex: 2,
-              child: Text(
-                "$text:",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: "ComicRelief",
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              "$text: ",
+              softWrap: false,
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: "ComicRelief",
+                fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              width: 260,
+            Expanded(
+              flex: 10,
               child: TextField(
                 obscureText: obscureText,
                 style: TextStyle(

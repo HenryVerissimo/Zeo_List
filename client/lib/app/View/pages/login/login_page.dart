@@ -10,12 +10,11 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 100),
-              child: Column(
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Column(
                 children: [
                   Center(
                     child: Text(
@@ -30,13 +29,13 @@ class LoginPage extends StatelessWidget {
                   SvgPicture.asset("assets/images/lista_ilustracao.svg", height: 260),
                 ],
               ),
-            ),
-            CardLoginWidget(),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: CustomButtonGithub(),
-            ),
-          ],
+              CardLoginWidget(),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: CustomButtonGithub(),
+              ),
+            ],
+          ),
         ),
       ),
     );

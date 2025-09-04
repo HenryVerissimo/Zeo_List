@@ -62,26 +62,33 @@ class HomePageState extends State<HomePage> {
               ),
             )
             : Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Row(
                 children: [
-                  SvgPicture.asset("assets/images/icon_dormindo.svg", height: 70),
-                  Text(
-                    "Tudo calmo por aqui",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: "ComicRelief",
-                      color: const Color.fromARGB(60, 255, 255, 255),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset("assets/images/icon_dormindo.svg", height: 70),
+                        Text(
+                          "Tudo calmo por aqui",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "ComicRelief",
+                            color: const Color.fromARGB(60, 255, 255, 255),
+                          ),
+                        ),
+                        Text(
+                          "Você ainda não tem nenhuma tarefa",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "ComicRelief",
+                            color: const Color.fromARGB(60, 255, 255, 255),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                  Text(
-                    "Você ainda não tem nenhuma tarefa",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: "ComicRelief",
-                      color: const Color.fromARGB(60, 255, 255, 255),
-                    ),
-                  )
                 ],
               ),
             ),
